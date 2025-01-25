@@ -27,7 +27,7 @@ export const Posts: CollectionConfig = {
   admin: {
     preview: (doc, { locale }) => {
       if (doc?.slug) {
-        return `http://localhost:${3000}/${doc.slug}?locale=${locale}`
+        return `http://localhost:3000/${doc.slug}?locale=${locale}`
       }
 
       return null
