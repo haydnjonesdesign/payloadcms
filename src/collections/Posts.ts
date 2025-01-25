@@ -19,12 +19,15 @@ export const Posts: CollectionConfig = {
     }
   ],
   versions: {
-    drafts: true
+    drafts: true,
+    autosave: {
+      interval: 100, // We set this interval for optimal live preview
+    },
   },
   admin: {
     preview: (doc, { locale }) => {
       if (doc?.slug) {
-        return `http://localhost:3000/${doc.slug}?locale=${locale}`
+        return `http://localhost:${3000}/${doc.slug}?locale=${locale}`
       }
 
       return null
